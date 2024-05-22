@@ -8,7 +8,7 @@ telebot.logger.setLevel(logging.DEBUG)
 API_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 
 bot = telebot.TeleBot(API_TOKEN)
-meme_pic = open("./Know Your Meme.jpeg", "rb")
+# meme_pic = open("./pepe-laugh-he-doesnt-know.gif", "rb")
 
 
 @bot.message_handler(commands=["start"])
@@ -19,7 +19,7 @@ def send_welcome(message: telebot.types.Message):
             message.chat.first_name
         ),
     )
-    bot.send_photo(message.chat.id, meme_pic)
+    # bot.send_photo(message.chat.id, meme_pic)
 
 
 @bot.message_handler(func=lambda msg: True)
